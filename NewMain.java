@@ -76,6 +76,32 @@ public class NewMain {
             System.out.println("File not found.");
         }
     }
+    public static void readInstallment() {
+        try{
+        
+        String path = "/Users/aimily/Desktop/project-1-hahaha/installments.txt";
+        
+        while (scan.hasNextLine()) {
+            
+            line = scan.nextLine().trim();
+            
+            if (line.isEmpty() || line.startsWith("#"))
+                continue;
+            
+            String[] parts = line.split(",");
+            
+            if (parts.length >= 2) {
+                double percent = Double.parseDouble(parts[1].trim());
+                percentages.add(percent);
+            }
+        }
+        scan.close();    
+        }catch (FileNotFoundException e) {
+            System.out.println("Installment file not found.");
+        }
+       
+    }
+
 }
 
 class Customer {
