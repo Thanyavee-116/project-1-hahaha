@@ -79,7 +79,24 @@ public class NewMain {
 }
 
 class Customer {
+    protected String id;
+    protected double cashback;
 
+    public Customer(String id,double cashback) {
+        this.id = id;
+        this.cashback = cashback;
+    }
+
+    public String getid() { 
+        return id;
+    }
+
+    public double getcashback() {
+        return cashback;
+    }
+    public void set_CashBack(){
+        this.cashback = cashback;
+    }
 }
 
  class Booking {
